@@ -5,13 +5,24 @@ namespace App\Http\Controllers;
 
 use App\User;
 use Illuminate\Http\Request;
+use Validator;
+
 use App\Student;
 
 class studentController extends Controller
 {
     function insert(Request $request){
+//        $request->validate([
+//            'fristName' => 'required|max:5',
+//            'lastName'  => 'required|max:255',
+//            'email'     => 'required',
+//            'address'   => 'required|max:255',
+//        ]);
+
+
         $id = $request->get('id');
         if(isset($id)){//update exist student
+
             $fristName = $request->get('fristName');
             $lastName = $request->get('lastName');
             $email = $request->get('email');
@@ -26,7 +37,9 @@ class studentController extends Controller
         }else{//insert new student
             //Student::create($request->all());
             $student = new Student();
-            $student->fristName = $request->get('fristName');
+            //$student->fristName = $request->get('fristName');
+            $student->setFristName($request->get('fristName'));
+
             $student->lastName = $request->get('lastName');
             $student->email = $request->get('email');
             $student->address = $request->get('address');

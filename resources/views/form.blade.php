@@ -7,12 +7,12 @@
     {{----}}
 {{--@endif--}}
 
-<form action="{{isset($student->id)? 'signup':null}}" method="post">
+<form name="signupForm" onsubmit="return (validateForm())" action="{{isset($student->id)? 'signup':null}}" method="post">
     {{csrf_field()}}
     <input type="hidden" name="id" value="{{ $student->id or ''}}">
     frist Name: <input type="text" name="fristName" value="{{$student->fristName or ''}}">
     last Name:  <input type="text" name="lastName" value="{{$student->lastName or ''}}">
     email:      <input type="email" name="email" value="{{$student->email or ''}}">
     Address:    <input type="text" name="address" value="{{$student->address or ''}}">
-    <input type="submit" name submit>
+    <input type="submit" value="Submit">
 </form>
