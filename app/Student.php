@@ -12,6 +12,9 @@ class Student extends Model
 //    protected $email;
 //    protected $address;
 
+    protected $fillable = [
+        'fristName', 'lastName', 'email', 'address',
+    ];
     /**
      * @return mixed
      */
@@ -104,7 +107,6 @@ class Student extends Model
         else
             exit("not valid address");
     }
-
 
 
     //

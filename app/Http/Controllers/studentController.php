@@ -19,7 +19,6 @@ class studentController extends Controller
 //            'address'   => 'required|max:255',
 //        ]);
 
-
         $id = $request->get('id');
         if(isset($id)){//update exist student
 
@@ -40,9 +39,10 @@ class studentController extends Controller
             //$student->fristName = $request->get('fristName');
             $student->setFristName($request->get('fristName'));
 
-            $student->lastName = $request->get('lastName');
-            $student->email = $request->get('email');
-            $student->address = $request->get('address');
+            $student->setLastName($request->get('lastName'));
+            $student->setEmail($request->get('email'));
+            $student->setAddress($request->get('address'));
+
             $student->save();
         }
         return view('signup');
