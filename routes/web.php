@@ -29,7 +29,7 @@ Route::get('viewRecords',function (){
 
 Route::post('deleteStudent', 'studentController@delete');
 
-Route::post('updateStudent', 'studentController@update');
+Route::post('getStudent', 'studentController@getStudent');
 
 Route::get('testing',function (){
    return "dotest";

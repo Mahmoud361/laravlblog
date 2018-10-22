@@ -24,7 +24,7 @@
                         <input type="submit" value="delete">
                     </form>
                 </td>
-                <td><form action="updateStudent" method="post">
+                <td><form action="getStudent" method="post">
                         {{csrf_field()}}
                         <input type="hidden" name="id" value="{{$student->id}}">
                         <input type="submit" value="update">

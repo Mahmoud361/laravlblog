@@ -15,6 +15,17 @@ class Student extends Model
     protected $fillable = [
         'fristName', 'lastName', 'email', 'address',
     ];
+
+    /**
+     * Student constructor.
+     * @param array $fillable
+     */
+//    public function __construct(array $fillable)
+//    {
+//        $this->fillable = $fillable;
+//    }
+
+
     /**
      * @return mixed
      */
@@ -44,7 +55,7 @@ class Student extends Model
      */
     public function setFristName($fristName)
     {
-        if(strlen($fristName)<6)
+        if(strlen($fristName)<255 && isset($fristName))
             $this->fristName = $fristName;
         else
             exit("not valid fristName");
@@ -63,7 +74,7 @@ class Student extends Model
      */
     public function setLastName($lastName)
     {
-        if(strlen($lastName)<6)
+        if(strlen($lastName)<255 && isset($lastName))
             $this->lastName = $lastName;
         else
             exit("not valid lastName");
@@ -102,7 +113,7 @@ class Student extends Model
      */
     public function setAddress($address)
     {
-        if(strlen($address)<255)
+        if(strlen($address)<255 && isset($address))
             $this->address = $address;
         else
             exit("not valid address");

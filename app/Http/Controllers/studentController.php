@@ -54,7 +54,7 @@ class studentController extends Controller
         return redirect('viewRecords');
     }
 
-    function update(Request $request){
+    function getStudent(Request $request){
         $id = $request->get('id');
         $student = Student::find($id);
         //return $student;
